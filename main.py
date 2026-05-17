@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict
 import math
 
-app = FastAPI(title="SAS Strategic Intelligence Engine v2.1 (The Architect Omniscience)")
+app = FastAPI(title="SAS Strategic Intelligence Engine v2.1 (Overall Energy Edition)")
 
 # ปลดล็อค CORS สำหรับ Lovable / Canvas / หน้าบ้านทั้งหมด
 app.add_middleware(
@@ -94,7 +94,7 @@ class SMFFullInputSchema(BaseModel):
     behavioral_forces: BehavioralForcesGroup
 
 # =====================================================================
-# 🟠 PART 2: THE QUANTUM CALCULUS CORE (v2.1 LOGIC)
+# 🟠 PART 2: THE QUANTUM CALCULUS CORE (v2.1 ACTIVE LOGIC)
 # =====================================================================
 class SASLogicCoreV2:
     @staticmethod
@@ -201,61 +201,84 @@ class UniversalBridgeV2:
                 "Subconscious_Inertia": m['viscosity'],
                 "Autopilot_Dominance_Rate": f"{round(m['autopilot'] * 10, 2)}%",
                 "Cognitive_Blindspot_Magnitude": round(m['reality_gap'] * (1.0 - (float(raw_dict["behavioral_forces"]['wisdom_level'])/10.0)), 2),
-                "Subconscious_Driver": m['subconscious_driver']  # ✨ เปลี่ยนคีย์จาก Active_Kilesa_Type เป็นมิตรกับยูสเซอร์
+                "Subconscious_Driver": m['subconscious_driver']
             },
             "Identity_&_Social_Cost": {
                 "Image_Maintenance_Tax": f"{round(m['ego_tax'] * 10, 2)}%",
                 "Self_Deception_Magnitude": m['self_deception_score'],
-                "Ego_Shield": m['ego_shield'],  # ✨ เปลี่ยนคีย์จาก Active_Defense_Mechanism
+                "Ego_Shield": m['ego_shield'],
                 "Identity_Threat_Exposure": id_def['id_threat_score']
             },
             "Energy_&_Resilience_Dynamics": {
                 "Action_Momentum": raw_dict["energy_iip"]['energy_momentum'],
                 "Friction_Exchange_Health": m['exchange_health_score'],
-                "Action_Persona": m['action_persona'],  # ✨ เปลี่ยนคีย์จาก Dominant_Behavioral_Mode
+                "Action_Persona": m['action_persona'],
                 "Recovery_Potential": round((float(raw_dict["exchange_4g"]['gratitude']) + float(raw_dict["standard_line_syntax"]['focus_presence'])) / 2.0, 2)
             }
         }
 
 # =====================================================================
-# 🚀 PART 4: THE HYPER-STRATEGIC GAMBIT GENERATOR
+# 🚀 PART 4: THE OVERALL ENERGY DYNAMIC CALCULATOR (METAPHOR GENERATOR)
 # =====================================================================
-class StrategicGambitV2:
+class OverallEnergyEngine:
     @staticmethod
-    def get_directive(m, raw_dict):
-        ms = raw_dict["needs_maslow"]
-        id_def = raw_dict["identity_defense"]
+    def evaluate_energy(m):
+        stability = m['stability']
+        tension = m['tension']
+        reality_gap = m['reality_gap']
+        viscosity = m['viscosity']
+        
+        # 🌪️ สภาวะพายุหมุนทอร์นาโด
+        if tension > 6.5 and stability < 4.0:
+            return "🌪️ TORNADO STATUS: High internal volatility and pressure. Structural core stability compromised due to extreme external friction."
+            
+        # ⛈️ สภาวะเมฆฝนฟ้าคะนองและฟ้าผ่า
+        if tension > 5.0 and reality_gap > 5.5:
+            return "⛈️ THUNDERSTORM STATUS: Heavy cognitive distortion and accumulated internal tension. High risk of immediate reactive escalation."
+            
+        # 🌫️ สภาวะม่านหมอกหนาทึบ
+        if viscosity > 6.5 and m['autopilot'] > 5.0:
+            return "🌫️ DENSE FOG STATUS: High subconscious inertia. Operating on elevated Autopilot dominance with low directional awareness."
+            
+        # 🌊 สภาวะกระแสน้ำคลื่นใต้ทะเลลึก
+        if tension > 4.0 and stability >= 4.0 and "Defensive Retreat" in m['action_persona']:
+            return "🌊 DEEP UNDERCURRENT STATUS: Calm surface with intense subconscious strategic mapping. Executing controlled decay to preserve core energy resources."
 
-        if ms['survival_safety'] < 4.0:
-            return "หมากเดิน: BASELINE REDOUBT - ทรัพยากรพื้นฐานวิกฤต! จงตัดขาดโลกภายนอก (W3) แล้วถอยกลับไปรักษาความปลอดภัยทางกายภาพและจิตใจเป็นอันดับแรก"
-        if m['stability'] < 3.5:
-            return "หมากเดิน: OVERDRIVE CRISIS RESET - ระบบเสี่ยงพังทลายในระดับโครงสร้าง สั่งปิดกลไกตอบสนองทั้งหมด ตัดกระแสขับเคลื่อน (Drive) ล้างกระดานอารมณ์ทันที"
-        if id_def['id_threat_score'] > 7.0 or m['ego_tax'] > 6.5:
-            return "หมากเดิน: ASYMMETRIC DECOUPLING - กำลังติดกับดักการเปรียบเทียบและอัตตาคุกคาม จงถอดหน้ากากใน W3 และสลายภาพลักษณ์ทิ้งเพื่อหยุดการไหลออกของพลังงาน"
-        if m['viscosity'] > 7.5:
-            return "หมากเดิน: COGNITIVE SHOCKWAVE - ความหนืดในตะกอนจิตใต้สำนึกสูงเกินไป จงทำพฤติกรรมที่หักล้างสัญชาตญาณเดิมอย่างรุนแรง (Pattern Breaker)"
-        if m['reality_gap'] > 6.0:
-            return "หมากเดิน: EMPIRICAL ANCHOR - ความจริงวิบัติตกแต่งสูงเกินไป หยุดประมวลผลความรู้สึก (W2) และความคิดเห็นสังคม เลิกเดา แล้วกลับไปวัดผลตัวเลขเชิงประจักษ์ใน W1 เท่านั้น"
-        if m['exchange_health_score'] < -3.0:
-            return "หมากเดิน: METABOLIC PURGE - วงจรการแลกเปลี่ยนเสียสมดุลเนื่องจากการ 'ขอกลืนกินและยื้อแย่ง' สูงเกินไป ให้เปลี่ยนโหมดเป็นผู้ให้ชั่วคราวเพื่อลดแรงเสียดทาน"
+        # ☀️ สภาวะท้องฟ้าเปิดแดดจัด
+        if stability > 7.0 and tension < 4.0:
+            return "☀️ CLEAR SKY STATUS: Optimal baseline equilibrium. High approach drive with clear cognitive processing and minimal friction."
 
-        return "หมากเดิน: TOTAL EXPANSION OMNI - ระบบอยู่ในเสถียรภาพระดับควอนตัม ไร้แรงเสียดทาน ขยายขอบเขตอิทธิพลเชิงยุทธศาสตร์และโจมตีกระดานเป้าหมายได้เต็มกำลัง"
+        # 🍃 สภาวะลมมรสุมเปลี่ยนทิศ
+        return "🍃 MONSOON WIND STATUS: Adaptive transition and recalibration. Shifting behavioral parameters to accommodate external environmental forces."
 
 # =====================================================================
 # 📡 PART 5: ENDPOINTS
 # =====================================================================
 @app.post("/analyze")
 async def main_analysis_endpoint(data: SMFFullInputSchema):
+    # เรียกใช้คลาส V2 แท้ดั้งเดิม ปลอดภัย ไร้ NameError 100%
     calculation = SASLogicCoreV2.calculate(data)
     universal_report = UniversalBridgeV2.build_report(calculation)
-    directive = StrategicGambitV2.get_directive(calculation['internal_metrics'], calculation['raw_ref'])
     
+    # คำนวณ Overall Energy ตามลอจิกอุปลักษณ์สากลที่คุณออกแบบ
+    overall_energy_profile = OverallEnergyEngine.evaluate_energy(calculation['internal_metrics'])
+    
+    stability_val = calculation['internal_metrics']['stability']
+    if stability_val > 8.0:
+        status_string = "OPTIMAL PERFORMANCE"
+    elif stability_val > 6.0:
+        status_string = "SUSTAINABLE & STABLE"
+    elif stability_val > 4.0:
+        status_string = "ELEVATED RISK / WARNING"
+    else:
+        status_string = "CRITICAL COMPROMISE"
+        
     return {
         "Status": "Success",
-        "Engine_Version": "2.1 (Architect-Omniscience-UX)",
+        "Engine_Version": "2.1.2 (Overall-Energy-UX)",
         "Strategic_Verdict": {
-            "Stability_Status": "🎯 PERFECT EQUILIBRIUM" if calculation['internal_metrics']['stability'] > 8.0 else "✅ SAFE" if calculation['internal_metrics']['stability'] > 6.0 else "⚠️ WARNING" if calculation['internal_metrics']['stability'] > 4.0 else "🚨 CRITICAL VULNERABILITY",
-            "Next_Gambit": directive
+            "Stability_Status": status_string,
+            "Overall_Energy": overall_energy_profile  # ✨ เปลี่ยนคีย์เป็นทางการและเสิร์ฟค่าสากลตามสั่งเรียบร้อยค่ะ!
         },
         "Comprehensive_Lab_Report": universal_report,
         "Raw_Sensor_Echo": data.dict()
@@ -264,8 +287,7 @@ async def main_analysis_endpoint(data: SMFFullInputSchema):
 @app.get("/")
 async def root():
     return {
-        "status": "SAS Master Engine v2.1 is Online", 
-        "architecture_mode": "Omniscience-UX",
+        "status": "SAS Master Engine v2.1.2 is Online", 
+        "architecture_mode": "Overall-Energy-UX",
         "active_sensors": 45
     }
-
