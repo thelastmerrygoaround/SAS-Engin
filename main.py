@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict
 import math
 
-app = FastAPI(title="SAS Strategic Intelligence Engine v3.0 (Nature's Catalyst)")
+app = FastAPI(title="SAS Strategic Intelligence Engine v2.1 (The Architect Omniscience)")
 
 # ปลดล็อค CORS สำหรับ Lovable / Canvas / หน้าบ้านทั้งหมด
 app.add_middleware(
@@ -94,9 +94,9 @@ class SMFFullInputSchema(BaseModel):
     behavioral_forces: BehavioralForcesGroup
 
 # =====================================================================
-# 🟠 PART 2: THE QUANTUM CALCULUS CORE
+# 🟠 PART 2: THE QUANTUM CALCULUS CORE (v2.1 LOGIC)
 # =====================================================================
-class SASLogicCoreV3:
+class SASLogicCoreV2:
     @staticmethod
     def calculate(raw: SMFFullInputSchema):
         w = raw.worlds
@@ -108,14 +108,15 @@ class SASLogicCoreV3:
         id_def = raw.identity_defense
         bf = raw.behavioral_forces
 
+        # SIMULATED SEMANTIC LAYER
         text_weight = 1.0 + (0.05 * (len(w.world_1_objective) + len(w.world_2_subjective) + len(w.world_3_social)))
 
-        # --- LAYER 1: COGNITIVE DISTORTION ---
+        # --- LAYER 1: ADVANCED COGNITIVE DISTORTION ---
         refraction_factor = 1.0 + (w.w2_refraction * 0.12) * (1.0 + (id_def.ditthi_belief_rigidity * 0.08))
         social_interference = w.w3_social_pressure * (1.0 + w.power_relation_asymmetry * 0.15)
         reality_gap = (refraction_factor * social_interference * text_weight) / (w.w1_obj_count + 1.0)
 
-        # --- LAYER 2: DEEP PSYCHE VISCOSITY ---
+        # --- LAYER 2: DEEP PSYCHE VISCOSITY & AUTOPILOT ---
         kilesa_amplifier = 1.0 + (cd.kilesa_active_trigger * 0.1)
         asava_force_total = cd.asava_attachment * kilesa_amplifier
         viscosity = (asava_force_total + cd.anusaya_force) / (bf.wisdom_level + 1.0)
@@ -123,11 +124,11 @@ class SASLogicCoreV3:
         total_desire_force = cd.craving_intensity + cd.aversion_intensity
         autopilot = (asava_force_total * total_desire_force) / (syn.focus_presence + 1.0)
 
-        # --- LAYER 3: WAVE RESILIENCE & ENERGY ---
+        # --- LAYER 3: WAVE RESILIENCE & ENERGY DYNAMICS ---
         emotional_residue = (syn.syntax_amplitude * syn.syntax_freq) * 0.2 * (1.0 + en.intensity * 0.05)
         decay_rate = (emotional_residue + bf.internal_tension + bf.neutral_drag) / (syn.focus_stability + 1.0)
 
-        # --- LAYER 4: IDENTITY DEFENSE ---
+        # --- LAYER 4: IDENTITY DEFENSE & EGO TAX ---
         identity_multiplier = 1.0 + (id_def.identity_overlap * 0.05) + (id_def.id_threat_score * 0.08)
         ego_tax = (id_def.mana_comparison_intensity * w.w3_social_pressure * identity_multiplier) / (bf.wisdom_level + 1.0)
         
@@ -135,7 +136,7 @@ class SASLogicCoreV3:
         if id_def.atta_defense_active or (id_def.defense_mech_id != "None" and id_def.defense_mech_id != ""):
             deception_base *= 2.0
         
-        # --- LAYER 5: 4G LOOP & FINAL STABILITY ---
+        # --- LAYER 5: MASLOW EQUILIBRIUM & 4G SUSTAINABILITY ---
         maslow_stability_factor = (ms.survival_safety + ms.self_actualization) / 2.0
         if ms.survival_safety < 4.0:
             maslow_stability_factor *= 0.5
@@ -143,11 +144,12 @@ class SASLogicCoreV3:
         lubricated_friction = ex.exchange_friction / (1.0 + (ex.gratitude * 0.6))
         exchange_health = (ex.grow + ex.give) - (ex.get + ex.grab_force * 0.5)
         
+        # --- FINAL SYNTHESIS ---
         stability_base = syn.wellbeing_index * 1.5 + (maslow_stability_factor * 0.8) + (en.energy_stability * 0.5)
         tension_impact = (bf.avoidance_force + bf.approach_drive * 0.2 + lubricated_friction) * 0.5
         stability = (stability_base / (1.0 + tension_impact)) - (deception_base * 0.15) - (emotional_residue * 0.1) + (exchange_health * 0.1)
 
-        # แปลงข้อมูลสากลส่งแดชบอร์ด
+        # 🧠 LOCALIZATION MAP: แปลงคำศัพท์เชิงทฤษฎีให้เป็นมิตรกับผู้ใช้งานทั่วไป
         kilesa_map = {"Lobha": "Desire / Attachment", "Dosa": "Resistance / Anger", "Moha": "Confusion / Inattention"}
         defense_map = {"ISOLATION": "Social Detachment", "DENIAL": "Refusing Reality", "PROJECTION": "Blaming External Factors", "RATIONALIZATION": "Over-thinking"}
         mode_map = {"FIGHT": "Active Response", "FLIGHT": "Defensive Retreat", "FREEZE": "Stagnant Holding", "FAWN": "People Pleasing"}
@@ -175,9 +177,9 @@ class SASLogicCoreV3:
         }
 
 # =====================================================================
-# 🔵 PART 3: UNIVERSAL SEMANTIC BRIDGE V3
+# 🔵 PART 3: UNIVERSAL SEMANTIC BRIDGE V2 (COMPREHENSIVE TRANSLATION)
 # =====================================================================
-class UniversalBridgeV3:
+class UniversalBridgeV2:
     @staticmethod
     def build_report(calc_results):
         m = calc_results["internal_metrics"]
@@ -199,73 +201,45 @@ class UniversalBridgeV3:
                 "Subconscious_Inertia": m['viscosity'],
                 "Autopilot_Dominance_Rate": f"{round(m['autopilot'] * 10, 2)}%",
                 "Cognitive_Blindspot_Magnitude": round(m['reality_gap'] * (1.0 - (float(raw_dict["behavioral_forces"]['wisdom_level'])/10.0)), 2),
-                "Subconscious_Driver": m['subconscious_driver']
+                "Subconscious_Driver": m['subconscious_driver']  # ✨ เปลี่ยนคีย์จาก Active_Kilesa_Type เป็นมิตรกับยูสเซอร์
             },
             "Identity_&_Social_Cost": {
                 "Image_Maintenance_Tax": f"{round(m['ego_tax'] * 10, 2)}%",
                 "Self_Deception_Magnitude": m['self_deception_score'],
-                "Ego_Shield": m['ego_shield'],
+                "Ego_Shield": m['ego_shield'],  # ✨ เปลี่ยนคีย์จาก Active_Defense_Mechanism
                 "Identity_Threat_Exposure": id_def['id_threat_score']
             },
             "Energy_&_Resilience_Dynamics": {
                 "Action_Momentum": raw_dict["energy_iip"]['energy_momentum'],
                 "Friction_Exchange_Health": m['exchange_health_score'],
-                "Action_Persona": m['action_persona'],
+                "Action_Persona": m['action_persona'],  # ✨ เปลี่ยนคีย์จาก Dominant_Behavioral_Mode
                 "Recovery_Potential": round((float(raw_dict["exchange_4g"]['gratitude']) + float(raw_dict["standard_line_syntax"]['focus_presence'])) / 2.0, 2)
             }
         }
 
 # =====================================================================
-# 🚀 PART 4: THE NATURAL ENERGY LANDSCAPE GENERATOR (v3.0 NEW ENGINE)
+# 🚀 PART 4: THE HYPER-STRATEGIC GAMBIT GENERATOR
 # =====================================================================
-class NaturalEnergyEngine:
+class StrategicGambitV2:
     @staticmethod
-    def generate_landscape(m, raw_dict):
-        stability = m['stability']
-        tension = m['tension']
-        reality_gap = m['reality_gap']
-        viscosity = m['viscosity']
-        
-        # 🌪️ CONDITION 1: พายุหมุนทอร์นาโด (Tornado) -> แรงตึงผิวสูง ความเสถียรต่ำ พลังงานหมุนวนจัด
-        if tension > 6.5 and stability < 4.0:
-            return {
-                "Energy_Symbol": "🌪️ TORNADO (พายุหมุนทอร์นาโด)",
-                "Dynamic_Metaphor": "สภาวะพลังงานของคุณกำลังหมุนวนด้วยความเร็วสูงและไร้ทิศทาง แรงกดดันมหาศาลจากภายนอกกำลังบดขยี้โครงสร้างความเสถียรภายใน พลังงานดิ่งลงสู่จุดวิกฤตพร้อมทำลายล้างลูปสัญชาตญาณเดิม"
-            }
-            
-        # ⚡ CONDITION 2: เมฆฝนฟ้าคะนองและฟ้าผ่า (Thunderstorm) -> แรงดันสูง บิดเบือนความจริงสูง พร้อมปะทะ
-        if tension > 5.0 and reality_gap > 5.5:
-            return {
-                "Energy_Symbol": "⛈️ THUNDERSTORM (เมฆฝนฟ้าคะนองและฟ้าผ่า)",
-                "Dynamic_Metaphor": "สภาวะพลังงานของคุณเหมือนประจุไฟฟ้าที่อัดแน่นในม่านเมฆดำ ทัศนวิสัยความจริงถูกบดบังด้วยความรู้สึกปรุงแต่ง มีความตึงเครียดสะสมชั้นในสูงมาก พร้อมที่จะปลดปล่อยแรงกระแทกหรือเกิดการปะทะเฉียบพลันหากถูกกระตุ้น"
-            }
-            
-        # 🌫️ CONDITION 3: หมอกหนาทึบ (Dense Fog) -> ความเฉื่อยสูง ออโต้ไพล็อตสูง ทิศทางไม่ชัดเจน
-        if viscosity > 6.5 and m['autopilot'] > 5.0:
-            return {
-                "Energy_Symbol": "🌫️ DENSE FOG (ม่านหมอกหนาทึบ)",
-                "Dynamic_Metaphor": "สภาวะพลังงานของคุณกำลังตกอยู่ในความเฉื่อยและแรงฉุดของจิตใต้สำนึก ระบบเดินหน้าด้วยโหมดอัตโนมัติ (Autopilot) พลังงานขับเคลื่อนไหลนิ่งเหมือนถูกกักขังไว้ในม่านหมอก มองไม่เห็นทิศทางเชิงยุทธศาสตร์ที่ชัดเจน"
-            }
-            
-        # 🌊 CONDITION 4: คลื่นใต้ทะเลลึก (Deep Undercurrent) -> ข้างนอกนิ่ง ข้างในเชี่ยวกราก (เช่น เคสสิงห์ซุ่ม/เซฟพลังงาน)
-        if tension > 4.0 and stability >= 4.0 and "Defensive Retreat" in m['action_persona']:
-            return {
-                "Energy_Symbol": "🌊 DEEP UNDERCURRENT (กระแสน้ำคลื่นใต้ทะเลลึก)",
-                "Dynamic_Metaphor": "สภาวะพลังงานของคุณภายนอกดูนิ่งสงบเรียบเฉยเหมือนผิวน้ำ แต่ภายในคือกระแสน้ำเชี่ยวกรากที่กำลังประมวลผลอย่างหนัก คุณกำลังจงใจปล่อยให้ระบบเสื่อมสลายชั่วคราว (Controlled Decay) เพื่อกักเก็บและรักษาพลังงานแกนกลางไว้รอจังหวะที่เหมาะสม"
-            }
+    def get_directive(m, raw_dict):
+        ms = raw_dict["needs_maslow"]
+        id_def = raw_dict["identity_defense"]
 
-        # ☀️ CONDITION 5: แดดจัดฟ้าเปิด (Clear Sky / Solar Flare) -> พลังงานรุกคืบสูง สมดุลดีมาก
-        if stability > 7.0 and tension < 4.0:
-            return {
-                "Energy_Symbol": "☀️ CLEAR SKY (ท้องฟ้าเปิดและแสงแดดทรงพลัง)",
-                "Dynamic_Metaphor": "สภาวะพลังงานของคุณสว่างไสว เคลียร์ คลีน และเปี่ยมด้วยแรงขับเคลื่อนเชิงรุก (Approach Drive) โครงสร้างความเสถียรอยู่ในจุดสมดุลระดับสูงสุด ไร้หมอกควันแห่งอคติบดบัง พร้อมสำหรับการแผ่ขยายอิทธิพลเชิงยุทธศาสตร์"
-            }
+        if ms['survival_safety'] < 4.0:
+            return "หมากเดิน: BASELINE REDOUBT - ทรัพยากรพื้นฐานวิกฤต! จงตัดขาดโลกภายนอก (W3) แล้วถอยกลับไปรักษาความปลอดภัยทางกายภาพและจิตใจเป็นอันดับแรก"
+        if m['stability'] < 3.5:
+            return "หมากเดิน: OVERDRIVE CRISIS RESET - ระบบเสี่ยงพังทลายในระดับโครงสร้าง สั่งปิดกลไกตอบสนองทั้งหมด ตัดกระแสขับเคลื่อน (Drive) ล้างกระดานอารมณ์ทันที"
+        if id_def['id_threat_score'] > 7.0 or m['ego_tax'] > 6.5:
+            return "หมากเดิน: ASYMMETRIC DECOUPLING - กำลังติดกับดักการเปรียบเทียบและอัตตาคุกคาม จงถอดหน้ากากใน W3 และสลายภาพลักษณ์ทิ้งเพื่อหยุดการไหลออกของพลังงาน"
+        if m['viscosity'] > 7.5:
+            return "หมากเดิน: COGNITIVE SHOCKWAVE - ความหนืดในตะกอนจิตใต้สำนึกสูงเกินไป จงทำพฤติกรรมที่หักล้างสัญชาตญาณเดิมอย่างรุนแรง (Pattern Breaker)"
+        if m['reality_gap'] > 6.0:
+            return "หมากเดิน: EMPIRICAL ANCHOR - ความจริงวิบัติตกแต่งสูงเกินไป หยุดประมวลผลความรู้สึก (W2) และความคิดเห็นสังคม เลิกเดา แล้วกลับไปวัดผลตัวเลขเชิงประจักษ์ใน W1 เท่านั้น"
+        if m['exchange_health_score'] < -3.0:
+            return "หมากเดิน: METABOLIC PURGE - วงจรการแลกเปลี่ยนเสียสมดุลเนื่องจากการ 'ขอกลืนกินและยื้อแย่ง' สูงเกินไป ให้เปลี่ยนโหมดเป็นผู้ให้ชั่วคราวเพื่อลดแรงเสียดทาน"
 
-        # 🍃 CONDITION 6: ลมมรสุมเปลี่ยนทิศ (Monsoon Wind) -> สภาวะก้ำกึ่ง กำลังปรับฐาน
-        return {
-            "Energy_Symbol": "🍃 MONSOON WIND (กระแสลมมรสุมเปลี่ยนทิศ)",
-            "Dynamic_Metaphor": "สภาวะพลังงานของคุณกำลังอยู่ในช่วงแปรปรวนเพื่อปรับสมดุลใหม่ ระบบกำลังเทรดวินัยหรือผ่อนปรนตามสถานการณ์หน้างาน พลังงานไม่ได้นิ่งสนิทแต่ไหลเวียนไปตามแรงบีบของทิศทางลม"
-        }
+        return "หมากเดิน: TOTAL EXPANSION OMNI - ระบบอยู่ในเสถียรภาพระดับควอนตัม ไร้แรงเสียดทาน ขยายขอบเขตอิทธิพลเชิงยุทธศาสตร์และโจมตีกระดานเป้าหมายได้เต็มกำลัง"
 
 # =====================================================================
 # 📡 PART 5: ENDPOINTS
@@ -274,26 +248,14 @@ class NaturalEnergyEngine:
 async def main_analysis_endpoint(data: SMFFullInputSchema):
     calculation = SASLogicCoreV2.calculate(data)
     universal_report = UniversalBridgeV2.build_report(calculation)
+    directive = StrategicGambitV2.get_directive(calculation['internal_metrics'], calculation['raw_ref'])
     
-    # 🌟 ดึงลอจิกธรรมชาติวิทยามาสแกนพลังงานโอเวอร์ออล
-    energy_landscape = NaturalEnergyEngine.generate_landscape(calculation['internal_metrics'], calculation['raw_ref'])
-    
-    stability_val = calculation['internal_metrics']['stability']
-    if stability_val > 8.0:
-        status_string = "OPTIMAL PERFORMANCE"
-    elif stability_val > 6.0:
-        status_string = "SUSTAINABLE & STABLE"
-    elif stability_val > 4.0:
-        status_string = "ELEVATED RISK / WARNING"
-    else:
-        status_string = "CRITICAL COMPROMISE"
-        
     return {
         "Status": "Success",
-        "Engine_Version": "3.0 (Nature-Catalyst)",
+        "Engine_Version": "2.1 (Architect-Omniscience-UX)",
         "Strategic_Verdict": {
-            "Stability_Status": status_string,
-            "Energy_Landscape": energy_landscape  # ✨ เอาต์พุตสัญญะธรรมชาติส่งตรงถึงหน้าแดชบอร์ด
+            "Stability_Status": "🎯 PERFECT EQUILIBRIUM" if calculation['internal_metrics']['stability'] > 8.0 else "✅ SAFE" if calculation['internal_metrics']['stability'] > 6.0 else "⚠️ WARNING" if calculation['internal_metrics']['stability'] > 4.0 else "🚨 CRITICAL VULNERABILITY",
+            "Next_Gambit": directive
         },
         "Comprehensive_Lab_Report": universal_report,
         "Raw_Sensor_Echo": data.dict()
@@ -302,8 +264,8 @@ async def main_analysis_endpoint(data: SMFFullInputSchema):
 @app.get("/")
 async def root():
     return {
-        "status": "SAS Master Engine v3.0 is Online", 
-        "architecture_mode": "Nature-Catalyst",
+        "status": "SAS Master Engine v2.1 is Online", 
+        "architecture_mode": "Omniscience-UX",
         "active_sensors": 45
     }
 
